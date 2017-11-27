@@ -1,0 +1,1 @@
+<div id="footer">VietMega &copy; Copyright 2017. All rights reserved</div><!--End footer-->

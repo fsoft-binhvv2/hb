@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>Nguồn học bổng</title>
+      <!-- core CSS -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/font-awesome.min.css" rel="stylesheet">
+      <link href="css/animate.min.css" rel="stylesheet">
+      <link href="css/owl.carousel.css" rel="stylesheet">
+      <link href="css/owl.transitions.css" rel="stylesheet">
+      <link href="css/prettyPhoto.css" rel="stylesheet">
+      <link href="css/main.css" rel="stylesheet">
+      <link href="css/responsive.css" rel="stylesheet">
+      <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+      <![endif]-->
+      <link rel="shortcut icon" href="images/ico/favicon.ico">
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+      <style>
+         /*    --------------------------------------------------
+         :: General
+         -------------------------------------------------- */
+         body {
+         font-family: 'Open Sans', sans-serif;
+         color: #353535;
+         }
+         .content h1 {
+         text-align: center;
+         }
+         .content .content-footer p {
+         color: #6d6d6d;
+         font-size: 12px;
+         text-align: center;
+         }
+         .content .content-footer p a {
+         color: inherit;
+         font-weight: bold;
+         }
+         /*	--------------------------------------------------
+         :: Table Filter
+         -------------------------------------------------- */
+         .panel {
+         border: 1px solid #ddd;
+         background-color: #fcfcfc;
+         }
+         .panel .btn-group {
+         margin: 15px 0 30px;
+         }
+         .panel .btn-group .btn {
+         transition: background-color .3s ease;
+         }
+         .table-filter {
+         background-color: #fff;
+         border-bottom: 1px solid #eee;
+         }
+         .table-filter tbody tr:hover {
+         cursor: pointer;
+         background-color: #eee;
+         }
+         .table-filter tbody tr td {
+         padding: 10px;
+         vertical-align: middle;
+         border-top-color: #eee;
+         }
+         .table-filter tbody tr.selected td {
+         background-color: #eee;
+         }
+         .table-filter tr td:first-child {
+         width: 38px;
+         }
+         .table-filter tr td:nth-child(2) {
+         width: 35px;
+         }
+         .ckbox {
+         position: relative;
+         }
+         .ckbox input[type="checkbox"] {
+         opacity: 0;
+         }
+         .ckbox label {
+         -webkit-user-select: none;
+         -moz-user-select: none;
+         -ms-user-select: none;
+         user-select: none;
+         }
+         .ckbox label:before {
+         content: '';
+         top: 1px;
+         left: 0;
+         width: 18px;
+         height: 18px;
+         display: block;
+         position: absolute;
+         border-radius: 2px;
+         border: 1px solid #bbb;
+         background-color: #fff;
+         }
+         .ckbox input[type="checkbox"]:checked + label:before {
+         border-color: #2BBCDE;
+         background-color: #2BBCDE;
+         }
+         .ckbox input[type="checkbox"]:checked + label:after {
+         top: 3px;
+         left: 3.5px;
+         content: '\e013';
+         color: #fff;
+         font-size: 11px;
+         font-family: 'Glyphicons Halflings';
+         position: absolute;
+         }
+         .table-filter .star {
+         color: #ccc;
+         text-align: center;
+         display: block;
+         }
+         .table-filter .star.star-checked {
+         color: #F0AD4E;
+         }
+         .table-filter .star:hover {
+         color: #ccc;
+         }
+         .table-filter .star.star-checked:hover {
+         color: #F0AD4E;
+         }
+         .table-filter .media-photo {
+         width: 120px;
+         }
+         .table-filter .media-body {
+         display: block;
+         /* Had to use this style to force the div to expand (wasn't necessary with my bootstrap version 3.3.6) */
+         }
+         .table-filter .media-meta {
+         font-size: 11px;
+         color: #999;
+         }
+         .table-filter .media .title {
+         color: #2BBCDE;
+         font-size: 14px;
+         font-weight: bold;
+         line-height: normal;
+         margin: 0;
+         }
+         .table-filter .media .title span {
+         font-size: .8em;
+         margin-right: 20px;
+         }
+         .table-filter .media .title span.pagado {
+         color: #5cb85c;
+         }
+         .table-filter .media .title span.pendiente {
+         color: #f0ad4e;
+         }
+         .table-filter .media .title span.cancelado {
+         color: #d9534f;
+         }
+         .table-filter .media .summary {
+         font-size: 14px;
+         }
+      </style>
+   </head>
+   <!--/head-->
+   <body id="home" class="homepage">
+      <header id="header">
+         <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
+            <div class="container">
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+               </div>
+               <div class="collapse navbar-collapse navbar-right">
+                  <ul class="nav navbar-nav">
+                     <li class="scroll"><a href="#features">Về chúng tôi</a></li>
+                     <li class="scroll"><a href="#services">Khám phá học bổng toàn phần</a></li>
+                     <li class="scroll"><a href="#portfolio">Bài trắc nghiệm cá nhân</a></li>
+                     <li class="scroll"><a href="#about">Các dịch vụ thu phí</a></li>
+                  </ul>
+               </div>
+            </div>
+            <!--/.container-->
+         </nav>
+         <!--/nav-->
+      </header>
+      <!--/#animated-number-->
+      <section id="blog">
+         <div class="container">
+            <div class="row">
+               <section class="content">
+                  <div class="col-md-12">
+                     <div class="panel panel-default">
+                        <div class="panel-body">
+                           <div class="pull-right">
+                              <div class="btn-group">
+                                 <button type="button" class="btn btn-success btn-filter" data-target="pagado">Pagado</button>
+                                 <button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Pendiente</button>
+                                 <button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Cancelado</button>
+                                 <button type="button" class="btn btn-default btn-filter" data-target="all">Todos</button>
+                              </div>
+                           </div>
+                           <div class="table-container">
+                              <table class="table table-filter">
+                                 <tbody>
+                                    <tr data-status="pagado">
+                                        
+                                       <td>
+                                          <div class="media">
+                                             <a href="#" class="pull-left">
+                                             <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+                                             </a>
+                                             <div class="media-body">
+                                                <span class="media-meta pull-right">Febrero 13, 2016</span>
+                                                <h4 class="title">
+                                                   Lorem Impsum
+                                                   <span class="pull-right pagado">(Kinh nghiệm học bổng)</span>
+                                                </h4>
+                                                <p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...Ut enim ad minim veniam, quis nostrud exercitation..Ut enim ad minim veniam, quis nostrud exercitation..Ut enim ad minim veniam, quis nostrud exercitation..Ut enim ad minim veniam, quis nostrud exercitation..</p>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr data-status="pendiente">
+                                       
+                                       <td>
+                                          <div class="media">
+                                             <a href="#" class="pull-left">
+                                             <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+                                             </a>
+                                             <div class="media-body">
+                                                <span class="media-meta pull-right">Febrero 13, 2016</span>
+                                                <h4 class="title">
+                                                   Lorem Impsum
+                                                   <span class="pull-right pendiente">(Nhà nghiên cứu khoa học xã hội
+)</span>
+                                                </h4>
+                                                <p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...Ut enim ad minim veniam, quis nostrud exercitation..Ut enim ad minim veniam, quis nostrud exercitation..Ut enim ad minim veniam, quis nostrud exercitation..Ut enim ad minim veniam, quis nostrud exercitation..</p>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                     
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+            </div>
+         </div>
+      </section>
+      <section id="get-in-touch">
+         <div class="container">
+            <div class="section-header center-block">
+               <h2 class="section-title text-center wow fadeInDown">Học bổng Thạc sĩ - Tiến sĩ</h2>
+               <div class="carousel-content center-block">
+                  <h2>Học bổng Thạc sĩ Tiến sĩ</h2>
+                  <p>
+                  <form class="form-inline">
+                     <div class="form-group">
+                        <label for="exampleInputAmount">Chọn bậc học </label>
+                        <div class="input-group">
+                           <select class="form-control">
+                              <option>Thạc sỹ</option>
+                              <option>Tiến sỹ</option>
+                              <option>Khác</option>
+                           </select>
+                        </div>
+                     </div>
+                     <button type="submit" class="btn btn-primary">Tìm học bổng ngay</button>
+                  </form>
+                  </p>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--/#get-in-touch-->
+      <footer id="footer">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-6">
+                  &copy; 2014 Your Company. Designed by <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>
+               </div>
+               <div class="col-sm-6">
+                  <ul class="social-icons">
+                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                     <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                     <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                     <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                     <li><a href="#"><i class="fa fa-flickr"></i></a></li>
+                     <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                     <li><a href="#"><i class="fa fa-github"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!--/#footer-->
+      <script src="js/jquery.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+      <script src="js/owl.carousel.min.js"></script>
+      <script src="js/mousescroll.js"></script>
+      <script src="js/smoothscroll.js"></script>
+      <script src="js/jquery.prettyPhoto.js"></script>
+      <script src="js/jquery.isotope.min.js"></script>
+      <script src="js/jquery.inview.min.js"></script>
+      <script src="js/wow.min.js"></script>
+      <script src="js/main.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function () {
+         
+         $('.star').on('click', function () {
+         $(this).toggleClass('star-checked');
+         });
+         
+         $('.ckbox label').on('click', function () {
+         $(this).parents('tr').toggleClass('selected');
+         });
+         
+         $('.btn-filter').on('click', function () {
+         var $target = $(this).data('target');
+         if ($target != 'all') {
+         $('.table tr').css('display', 'none');
+         $('.table tr[data-status="' + $target + '"]').fadeIn('slow');
+         } else {
+         $('.table tr').css('display', 'none').fadeIn('slow');
+         }
+         });
+         
+         });
+      </script>
+   </body>
+</html>
